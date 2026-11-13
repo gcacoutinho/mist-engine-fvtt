@@ -245,7 +245,7 @@ export function setupHooks() {
       const selectedContent = state.doc.slice(range.start, range.end).content;
       const leftContent = selectedContent.size > 0 ? selectedContent : paragraphNode.create();
       const leftBar = divNode.create({ _preserve: { class: "left-bar" } }, leftContent);
-      const rightBar = divNode.create({ _preserve: { class: "right-bar" } }, paragraphNode.create({}, menu.schema.text("PLACEHOLDER")));
+      const rightBar = divNode.create({ _preserve: { class: "right-bar" } }, paragraphNode.create({}, menu.schema.text(game.i18n.localize("MIST_ENGINE.UI.SidebarPlaceholder"))));
       const sidebar = divNode.create({ _preserve: { class: "content-with-sidebar" } }, [leftBar, rightBar]);
       menu.view.dispatch(state.tr.replaceWith(range.start, range.end, sidebar));
     };
@@ -278,69 +278,69 @@ export function setupHooks() {
       };
 
       menus.icons = {
-        title: "Icons",
+        title: game.i18n.localize("MIST_ENGINE.UI.Icons"),
         cssClass: "icons",
         icon: '<i class="fa-solid fa-icons fa-fw"></i>',
         entries: [
-          { action: "icon-origin",    title: "Origin Icon",    cmd: insertIcon("icon-origin") },
-          { action: "icon-adventure", title: "Adventure Icon", cmd: insertIcon("icon-adventure") },
-          { action: "icon-greatness", title: "Greatness Icon", cmd: insertIcon("icon-greatness") },
-          { action: "icon-hint", title: "Hint Icon", cmd: insertIconElement("fa-solid fa-circle-question icon-hint") },
+          { action: "icon-origin",    title: game.i18n.localize("MIST_ENGINE.UI.OriginIcon"),    cmd: insertIcon("icon-origin") },
+          { action: "icon-adventure", title: game.i18n.localize("MIST_ENGINE.UI.AdventureIcon"), cmd: insertIcon("icon-adventure") },
+          { action: "icon-greatness", title: game.i18n.localize("MIST_ENGINE.UI.GreatnessIcon"), cmd: insertIcon("icon-greatness") },
+          { action: "icon-hint", title: game.i18n.localize("MIST_ENGINE.UI.HintIcon"), cmd: insertIconElement("fa-solid fa-circle-question icon-hint") },
         ],
       };
     }
 
     menus.fakeHeadings = {
-      title: "Fake Headings",
+      title: game.i18n.localize("MIST_ENGINE.UI.FakeHeadings"),
       cssClass: "fake-headings",
       icon: '<i class="fa-solid fa-heading fa-fw"></i>',
       entries: [
         {
           action: "fake-h1",
-          title: "Fake Heading 1",
+          title: game.i18n.localize("MIST_ENGINE.UI.FakeHeading1"),
           cmd: setFakeHeading("fh1"),
         },
         {
           action: "fake-h2",
-          title: "Fake Heading 2",
+          title: game.i18n.localize("MIST_ENGINE.UI.FakeHeading2"),
           cmd: setFakeHeading("fh2"),
         },
         {
           action: "fake-h3",
-          title: "Fake Heading 3",
+          title: game.i18n.localize("MIST_ENGINE.UI.FakeHeading3"),
           cmd: setFakeHeading("fh3"),
         },
       ],
     };
 
     menus.textframes = {
-      title: "Textframes",
+      title: game.i18n.localize("MIST_ENGINE.UI.Textframes"),
       cssClass: "textframes",
       icon: '<i class="fa-solid fa-layer-group fa-fw"></i>',
       entries: [
         {
           action: "content-with-sidebar",
-          title: "Content with Sidebar",
+          title: game.i18n.localize("MIST_ENGINE.UI.ContentWithSidebar"),
           cmd: wrapInContentSidebar,
         },
         {
           action: "written-block",
-          title: "Written Block",
+          title: game.i18n.localize("MIST_ENGINE.UI.WrittenBlock"),
           cmd: wrapInFrame("written-block"),
         },
         {
           action: "text-container-long-paper-background",
-          title: "Long Paper Background",
+          title: game.i18n.localize("MIST_ENGINE.UI.LongPaperBackground"),
           cmd: wrapInFrame("text-container-long-paper-background"),
         },
         {
           action: "text-container-300",
-          title: "Container 300",
+          title: game.i18n.localize("MIST_ENGINE.UI.Container300"),
           cmd: wrapInFrame("text-container-300"),
         },
         {
           action: "text-container-500",
-          title: "Container 500",
+          title: game.i18n.localize("MIST_ENGINE.UI.Container500"),
           cmd: wrapInFrame("text-container-500"),
         },
       ],
@@ -380,7 +380,7 @@ export function setupHooks() {
     if (hasBackpack) return;
 
     const itemData = {
-      name: "Backpack",
+      name: game.i18n.localize("MIST_ENGINE.THEMEBOOKS.Backpack"),
       type: "backpack",
       system: {
         /* ... */
@@ -617,15 +617,15 @@ export function setupHooks() {
           frames: [
             {
               src: "systems/mist-engine-fvtt/assets/token_frames/litm-token-frame-1.png",
-              label: "LitM Frame 1",
+              label: game.i18n.format("MIST_ENGINE.UI.TokenFrame", { number: 1 }),
             },
             {
               src: "systems/mist-engine-fvtt/assets/token_frames/litm-token-frame-2.png",
-              label: "LitM Frame 2",
+              label: game.i18n.format("MIST_ENGINE.UI.TokenFrame", { number: 2 }),
             },
             {
               src: "systems/mist-engine-fvtt/assets/token_frames/litm-token-frame-3.png",
-              label: "LitM Frame 3",
+              label: game.i18n.format("MIST_ENGINE.UI.TokenFrame", { number: 3 }),
             },
           ],
         },

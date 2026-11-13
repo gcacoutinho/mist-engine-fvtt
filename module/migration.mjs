@@ -77,7 +77,7 @@ function buildThemebookUpdate(item) {
  */
 function buildBackpackItemData() {
     return {
-        name: "Backpack",
+        name: game.i18n.localize("MIST_ENGINE.THEMEBOOKS.Backpack"),
         type: "backpack",
         system: {
             /* ... */

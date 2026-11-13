@@ -785,10 +785,10 @@ export class MistEngineLegendInTheMistCharacterSheet extends MistEngineActorShee
         let itemName = "New Item";
         try {
             itemName = await foundry.applications.api.DialogV2.prompt({
-                window: { title: "Enter the backpack item name" },
+                window: { title: game.i18n.localize("MIST_ENGINE.UI.EnterBackpackItem") },
                 content: '<input name="itemName" type="text" autofocus>',
                 ok: {
-                    label: "Submit",
+                    label: game.i18n.localize("Submit"),
                     callback: (event, button, dialog) => button.form.elements.itemName.value
                 }
             });
